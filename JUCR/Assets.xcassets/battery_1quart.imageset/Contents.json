@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "battery-quarter-solid.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
