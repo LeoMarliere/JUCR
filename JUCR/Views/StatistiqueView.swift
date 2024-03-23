@@ -7,6 +7,26 @@
 
 import SwiftUI
 
+struct StatistiqueListView: View {
+    
+    @State var viewModel: StatistiqueListViewModel
+
+    var body: some View {
+        VStack {
+            Text(MagicStrings.title_stat)
+                .font(.headline)
+                .padding(.horizontal)
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(viewModel.stats) { stat in
+                        StatistiqueView(statistique: stat)
+                    }
+                }
+            }
+        }
+    }
+}
+
 struct StatistiqueView: View {
     
     var statistique: Statistiques
@@ -34,37 +54,4 @@ struct StatistiqueView: View {
            .cornerRadius(10)
            .shadow(radius: 3)
        }
-}
-
-struct StatistiqueList: View {
-    
-    @ObservedObject var viewModel: StatistiqueViewModel
-
-    var body: some View {
-        VStack {
-            Text(MagicStrings.title_stat)
-                .font(.headline)
-                .padding(.horizontal)
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach(viewModel.stats) { stat in
-                        StatistiqueView(statistique: stat)
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct StatistiqueList_Previews: PreviewProvider {
-    static var previews: some View {
-        let stats = [
-            Statistiques(stat: "240 Volts", statType: MagicStrings.stat_volt),
-            Statistiques(stat: "5.46 Km", statType: MagicStrings.stat_charge),
-            Statistiques(stat: "23Min", statType: MagicStrings.stat_time)
-        ]
-        
-        let viewModel = StatistiqueViewModel(stats: stats)
-        return StatistiqueList(viewModel: viewModel)
-    }
 }

@@ -9,18 +9,19 @@ import SwiftUI
 
 class MainModel: Identifiable, ObservableObject, Equatable {
     
+    @Published var car: Car
     @Published var statistiquesList: [Statistiques]
     @Published var nearbyChargesList: [Supercharges]
     
-    init() {}
-    
-    init(statistiquesList: [Statistiques], nearbyChargesList: [Supercharges]) {
+    init(car: Car, statistiquesList: [Statistiques], nearbyChargesList: [Supercharges]) {
+        self.car = car
         self.statistiquesList = statistiquesList
         self.nearbyChargesList = nearbyChargesList
     }
     
     static func == (lhs: MainModel, rhs: MainModel) -> Bool {
-        return lhs.statistiquesList == rhs.statistiquesList &&
+        return lhs.car == rhs.car &&
+        lhs.statistiquesList == rhs.statistiquesList &&
         lhs.nearbyChargesList == rhs.nearbyChargesList
     }
 }

@@ -33,16 +33,12 @@ class Statistiques: Identifiable, ObservableObject, Equatable {
         case MagicStrings.stat_volt:
             self.image = UIImage(named: "charging_station")!
         case MagicStrings.stat_charge:
-            self.image = UIImage(named: "battey_half")!
+            self.image = UIImage(named: "battery_half")!
         case MagicStrings.stat_time:
             self.image = UIImage(named: "hourglass_half")!
         default:
-            return
+            self.image = UIImage(named: "hourglass_half")!
         }
-    }
-    
-    convenience init(from data: StatistiquesData) {
-        self.init(stat: data.stat, statType: statType)
     }
     
     static func == (lhs: Statistiques, rhs: Statistiques) -> Bool {
@@ -52,15 +48,13 @@ class Statistiques: Identifiable, ObservableObject, Equatable {
     }
 }
 
-class StatistiqueViewModel: Identifiable, ObservableObject, Equatable {
+class StatistiqueListViewModel: Identifiable, ObservableObject, Equatable {
     
     var stats: [Statistiques]
     
-    init(stats: [Statistiques]) {
-        self.stats = stats
-    }
+    init(stats: [Statistiques]) { self.stats = stats}
     
-    static func == (lhs: StatistiqueViewModel, rhs: StatistiqueViewModel) -> Bool {
+    static func == (lhs: StatistiqueListViewModel, rhs: StatistiqueListViewModel) -> Bool {
         return lhs.stats == rhs.stats
     }
 }
