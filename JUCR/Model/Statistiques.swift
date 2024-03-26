@@ -24,23 +24,23 @@ class Statistiques: Identifiable, ObservableObject, Equatable {
         case MagicStrings.stat_volt:
             self.image = UIImage(named: "charging_station")!
             self.iconColor = Color(.red)
-            self.iconBackgroundColor = Color(red: 236.0/255.0, green: 129.0/255.0, blue: 128.0/255.0)
+            self.iconBackgroundColor = MagicNumbers.customColor_red
         case MagicStrings.stat_charge:
             self.image = UIImage(named: "battery_half")!
             self.iconColor = Color(.yellow)
-            self.iconBackgroundColor = Color(red: 235.0/255.0, green: 250.0/255.0, blue: 188.0/255.0)
+            self.iconBackgroundColor = MagicNumbers.customColor_yellow
         case MagicStrings.stat_time:
             self.image = UIImage(named: "hourglass_half")!
             self.iconColor = Color(.blue)
-            self.iconBackgroundColor = Color(red: 191.0/255.0, green: 228.0/255.0, blue: 249.0/255.0)
+            self.iconBackgroundColor = MagicNumbers.customColor_blue
         case MagicStrings.stat_travel:
             self.image = UIImage(named: "car")!
             self.iconColor = Color(.purple)
-            self.iconBackgroundColor = Color(red: 197.0/255.0, green: 156.0/255.0, blue: 200.0/255.0)
+            self.iconBackgroundColor = MagicNumbers.customColor_purple
         default:
             self.image = UIImage(named: "hourglass_half")!
-            self.iconColor = Color(.blue)
-            self.iconBackgroundColor = Color(red: 191.0/255.0, green: 228.0/255.0, blue: 249.0/255.0)
+            self.iconColor = Color(.red)
+            self.iconBackgroundColor = MagicNumbers.customColor_red
         }
     }
     

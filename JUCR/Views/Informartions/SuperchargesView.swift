@@ -15,11 +15,11 @@ struct SuperchargesView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(charge.address)
-                    .font(.system(size: 12, weight: .bold))
+                    .font(.system(size: MagicNumbers.fontSize_regular, weight: .bold))
                     .padding(.bottom, 2)
                 
                 Text(charge.availableSlots)
-                    .font(.system(size: 10, weight: .light))
+                    .font(.system(size: MagicNumbers.fontSize_small, weight: .light))
                     .foregroundColor(.gray)
             }
             .padding(.vertical, 8)
@@ -33,13 +33,13 @@ struct SuperchargesView: View {
                     .frame(width: 20, height: 20)
                 
                 Text(charge.distance)
-                    .font(.system(size: 8, weight: .light))
+                    .font(.system(size: MagicNumbers.fontSize_tiny, weight: .light))
                     .foregroundColor(.gray)
             }
         }
         .padding(.horizontal)
         .padding(10)
-        .background(Color(red: 242.0/255.0, green: 242.0/255.0, blue: 243.0/255.0))
+        .background(MagicNumbers.customColor_statsBackground)
         .cornerRadius(10)
     }
 }

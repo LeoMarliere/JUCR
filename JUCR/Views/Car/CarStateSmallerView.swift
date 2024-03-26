@@ -12,32 +12,40 @@ struct CarStateSmallerView: View {
     @State var viewModel: Car
     
     var body: some View {
-        HStack(spacing: 50) {
-            VStack(alignment:.leading) {
-                Text(viewModel.model)
-                    .font(.system(size: 18, weight: .bold))
-                    .foregroundColor(.white)
+        VStack {
+            HStack() {
+                VStack(alignment:.leading) {
+                    Text(viewModel.model)
+                        .font(.system(size: MagicNumbers.fontSize_title, weight: .bold))
+                        .foregroundColor(.white)
+                    
+                    HStack(alignment: .top, content: {
+                        Text(MagicStrings.carState_charging)
+                            .font(.system(size: MagicNumbers.fontSize_regular, weight: .regular))
+                            .foregroundColor(.white)
+                        Image(systemName: MagicStrings.icon_bolt)
+                            .font(.system(size: MagicNumbers.fontSize_regular, weight: .regular))
+                            .foregroundColor(.white)
+                        Text(viewModel.batteryState.description + "%")
+                            .font(.system(size: MagicNumbers.fontSize_regular, weight: .regular))
+                            .foregroundColor(.white)
+                    })
+                }
                 
-                HStack(alignment: .top, content: {
-                    Text("Charging :")
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundColor(.white)
-                    Image(systemName: "bolt.fill")
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundColor(.white)
-                    Text(viewModel.batteryState.description + "%")
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundColor(.white)
-                })
+                Image(uiImage: viewModel.carImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: UIScreen.main.bounds.width * 0.4)
+                    .padding(.trailing, 10)
             }
+            .padding(.bottom, 20)
             
-            Image(uiImage: viewModel.carImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: UIScreen.main.bounds.width * 0.4)
-                .padding(.trailing, 10)
+            Image(systemName: MagicStrings.icon_downArrow)
+                .font(.system(size: MagicNumbers.fontSize_regular, weight: .regular))
+                .foregroundColor(.white)
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(red: 232.0/255.0, green: 67.0/255.0, blue: 96.0/255.0))
+        .background(MagicNumbers.customColor_mainBackground)
     }
 }

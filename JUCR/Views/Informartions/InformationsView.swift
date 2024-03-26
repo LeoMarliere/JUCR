@@ -17,7 +17,7 @@ struct InformationsView: View {
             Spacer()
             HStack {
                 Text(MagicStrings.title_stat)
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.system(size: MagicNumbers.fontSize_title, weight: .bold))
                     .foregroundColor(.black)
                     .padding(.horizontal)
                     .padding(.leading, 10)
@@ -29,7 +29,7 @@ struct InformationsView: View {
                     // Add action for the button if needed
                 }) {
                     Text(MagicStrings.subtitle_stats)
-                        .font(.system(size: 16, weight: .regular))
+                        .font(.system(size: MagicNumbers.fontSize_subtitle, weight: .regular))
                         .foregroundColor(.gray)
                         .padding(.horizontal)
                         .padding(.trailing, 10)
@@ -50,7 +50,7 @@ struct InformationsView: View {
             
             HStack {
                 Text(MagicStrings.title_charges)
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.system(size: MagicNumbers.fontSize_title, weight: .bold))
                     .foregroundColor(.black)
                     .padding(.horizontal)
                     .padding(.leading, 10)
@@ -61,7 +61,7 @@ struct InformationsView: View {
                     // Add action for the button if needed
                 }) {
                     Text(MagicStrings.subtitle_charges)
-                        .font(.system(size: 12, weight: .regular))
+                        .font(.system(size: MagicNumbers.fontSize_subtitle, weight: .regular))
                         .foregroundColor(.gray)
                         .padding(.horizontal)
                         .padding(.trailing, 10)

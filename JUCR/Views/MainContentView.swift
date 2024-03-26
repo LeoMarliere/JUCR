@@ -26,20 +26,20 @@ struct MainContentView: View {
                             .frame(height: (geometry.size.height * 0.4))
                             .padding(.bottom, 10) // Add padding between views if necessary
                         InformationsView(statistiques: viewModel!.statistiquesList, superCharges: viewModel!.nearbyChargesList)
-                            .frame(maxHeight: geometry.size.height * 0.6)
-                            .padding(.bottom, geometry.safeAreaInsets.bottom)
+                            .frame(maxHeight:  .infinity)
+                            .padding(.top, -60)
                     } else {
                         CarStateSmallerView(viewModel: viewModel!.car)
                             .frame(height: (geometry.size.height * 0.2))
                         InformationsView(statistiques: viewModel!.statistiquesList, superCharges: viewModel!.nearbyChargesList)
-                            .frame(maxHeight: geometry.size.height * 0.8)
-                            .padding(.bottom, geometry.safeAreaInsets.bottom)
+                            .frame(maxHeight: .infinity)
+                            .padding(.top, -50)
                             
                     }
                 }
             }
             .ignoresSafeArea(.all, edges: .bottom)
-            .background(Color(red: 232.0/255.0, green: 67.0/255.0, blue: 96.0/255.0))
+            .background(MagicNumbers.customColor_mainBackground)
             .gesture(DragGesture()
                 .onChanged { gesture in
                     let translation = gesture.translation.height
@@ -58,13 +58,11 @@ struct MainContentView: View {
     }
 }
 
-
-
 extension MainContentView {
     
     private func fetchMockViewModel() {
         
-        let car: Car = Car(ownerName: "Leo", model: "Tesla Model X", chargingState: true, chargingTime: "45 MIN", batteryState: 68)
+        let car: Car = Car(ownerName: "Leo", model: MagicStrings.carModel_TeslaX, chargingState: true, chargingTime: "45 MIN", batteryState: 68)
         
         let statistiquesList: [Statistiques] = [
             Statistiques(stat: "240 Volts", statType: MagicStrings.stat_volt),

@@ -12,9 +12,9 @@ struct CarStateView: View {
     @State var viewModel: Car
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack() {
             Text(getGreeting(carOwnerName: viewModel.ownerName))
-                .font(.system(size: 12, weight: .light))
+                .font(.system(size: MagicNumbers.fontSize_regular, weight: .light))
                 .foregroundColor(.white)
                 .padding(.horizontal)
                 .padding(.bottom, 4)
@@ -22,8 +22,8 @@ struct CarStateView: View {
             ZStack(alignment: .top) {
                 
                 if(viewModel.chargingState) {
-                    Text("Charging your car ...")
-                        .font(.system(size: 24, weight: .bold))
+                    Text(MagicStrings.carState_mainTitle)
+                        .font(.system(size: MagicNumbers.fontSize_bigTitle, weight: .bold))
                         .foregroundColor(.white)
                 }
                 
@@ -33,19 +33,19 @@ struct CarStateView: View {
                     .frame(maxWidth: UIScreen.main.bounds.width * 0.8)
             }
             
-            Text("TIME TO END CHARGE : \(viewModel.chargingTime)")
-                .font(.system(size: 12, weight: .light))
+            Text(MagicStrings.carState_chargingTime + viewModel.chargingTime)
+                .font(.system(size: MagicNumbers.fontSize_regular, weight: .light))
                 .foregroundColor(.white)
                 .padding(.horizontal)
-                .padding(.bottom, 10)
+                .padding(.top, -50)
             
             ChargingAnimationView(chargingValue: viewModel.batteryState)
-                .padding(.top, 8)
+                .padding(.top, -20)
             
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(red: 232.0/255.0, green: 67.0/255.0, blue: 96.0/255.0))
+        .background(MagicNumbers.customColor_mainBackground)
     }
 }
 
@@ -57,9 +57,9 @@ extension CarStateView {
         let hour = calendar.component(.hour, from: currentDate)
         
         if hour < 12 {
-            return "Good Morning, " + carOwnerName
+            return MagicStrings.carState_morning + carOwnerName
         } else {
-            return "Good Afternoon, " + carOwnerName
+            return MagicStrings.carState_afternoon + carOwnerName
         }
     }
 }

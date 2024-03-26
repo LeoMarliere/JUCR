@@ -54,6 +54,7 @@
 		238997312BB1B2C300151C5C /* CarStateSmallerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238997302BB1B2C300151C5C /* CarStateSmallerView.swift */; };
 		238997392BB1C7D900151C5C /* CarStateSmallerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238997302BB1B2C300151C5C /* CarStateSmallerView.swift */; };
 		2389973A2BB1C7D900151C5C /* CarStateSmallerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238997302BB1B2C300151C5C /* CarStateSmallerView.swift */; };
+		2389973C2BB3106B00151C5C /* MagicsNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389973B2BB3106B00151C5C /* MagicsNumbers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		23756EAE2BAF0E93006103F6 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		23756EB32BAF17AB006103F6 /* CarStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarStateView.swift; sourceTree = "<group>"; };
 		238997302BB1B2C300151C5C /* CarStateSmallerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarStateSmallerView.swift; sourceTree = "<group>"; };
+		2389973B2BB3106B00151C5C /* MagicsNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicsNumbers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			children = (
 				23756E412BAD8B22006103F6 /* Persistence.swift */,
 				23756E982BADACB5006103F6 /* MagicStrings.swift */,
+				2389973B2BB3106B00151C5C /* MagicsNumbers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				23756E992BADACB5006103F6 /* MagicStrings.swift in Sources */,
 				23756E902BAD9C20006103F6 /* StatistiqueView.swift in Sources */,
 				23756E9D2BADAEB2006103F6 /* SuperchargesView.swift in Sources */,
+				2389973C2BB3106B00151C5C /* MagicsNumbers.swift in Sources */,
 				23756EAB2BAF0DF1006103F6 /* MainContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

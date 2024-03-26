@@ -10,7 +10,7 @@ import SwiftUI
 struct ChargingAnimationView: View {
     
     @State private var animationProgress: CGFloat = 0.0 // State to control animation progress
- var chargingValue: CGFloat
+    var chargingValue: CGFloat
     
     var body: some View {
         VStack {
@@ -21,13 +21,13 @@ struct ChargingAnimationView: View {
                 .frame(width: 50, height: 50) // Size of the circle
                 .overlay(
                     VStack {
-                        Image(systemName: "bolt.fill") // Image inside the circle
+                        Image(systemName: MagicStrings.icon_bolt) // Image inside the circle
                             .foregroundColor(.white)
-                            .font(.system(size: 10))
+                            .font(.system(size: MagicNumbers.fontSize_small))
                         
                         Text(chargingValue.description + "%") // Text below the image
                             .foregroundColor(.white)
-                            .font(.system(size: 10, weight: .bold))
+                            .font(.system(size: MagicNumbers.fontSize_small, weight: .bold))
                     }
                 )
                 .onAppear {

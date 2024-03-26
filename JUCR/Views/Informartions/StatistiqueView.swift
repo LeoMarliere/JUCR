@@ -29,17 +29,17 @@ struct StatistiqueView: View {
             }
 
             Text(statistique.stat)
-                .font(.system(size: 15, weight: .bold))
+                .font(.system(size: MagicNumbers.fontSize_subtitle, weight: .bold))
                 .foregroundColor(.black)
                 .padding(.bottom, 2)
             
             Text(statistique.statType)
-                .font(.system(size: 12, weight: .regular))
+                .font(.system(size: MagicNumbers.fontSize_regular, weight: .regular))
                 .foregroundColor(.gray)
                 .padding(.bottom, 10)
         }
         .frame(width: 140, height: 120)
-        .background(Color(red: 242.0/255.0, green: 242.0/255.0, blue: 243.0/255.0))
+        .background(MagicNumbers.customColor_statsBackground)
         .shadow(radius: 3)
         .cornerRadius(10)
     }
