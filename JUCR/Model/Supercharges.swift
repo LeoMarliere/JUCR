@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-struct SuperchargesData: Codable, Equatable {
-    
-    let address: String
-    let availableSlots: String
-    let distance: String
-    
-    static func == (lhs: SuperchargesData, rhs: SuperchargesData) -> Bool {
-        return lhs.address == rhs.address &&
-        lhs.availableSlots == rhs.availableSlots &&
-        lhs.distance == rhs.distance
-    }
-}
-
 class Supercharges: Identifiable, ObservableObject, Equatable {
     
     var address: String
@@ -30,12 +17,6 @@ class Supercharges: Identifiable, ObservableObject, Equatable {
         self.address = address
         self.availableSlots = availableSlots
         self.distance = distance
-    }
-    
-    convenience init(from data: SuperchargesData) {
-        self.init(address: data.address,
-                  availableSlots: data.availableSlots,
-                  distance: data.distance)
     }
     
     static func == (lhs: Supercharges, rhs: Supercharges) -> Bool {

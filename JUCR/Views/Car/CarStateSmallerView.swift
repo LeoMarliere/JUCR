@@ -12,7 +12,7 @@ struct CarStateSmallerView: View {
     @State var viewModel: Car
     
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 50) {
             
             VStack(alignment:.leading) {
                 Text(viewModel.model)
@@ -31,7 +31,6 @@ struct CarStateSmallerView: View {
                         .foregroundColor(.white)
                 })
             }
-            .padding(.leading, 10)
             
             Image(uiImage: viewModel.carImage)
                 .resizable()

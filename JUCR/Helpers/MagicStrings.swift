@@ -11,6 +11,7 @@ class MagicStrings {
     
     static let stat_volt = "Voltage"
     static let stat_charge = "Remaining charge"
+    static let stat_travel = "Distance Travel"
     static let stat_time = "Charging Time"
     
     static let title_stat = "Statistics"

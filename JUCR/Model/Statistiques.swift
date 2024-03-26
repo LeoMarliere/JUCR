@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-struct StatistiquesData: Codable, Equatable {
-    
-    let stat: String
-    let statType: String
-    
-    static func == (lhs: StatistiquesData, rhs: StatistiquesData) -> Bool {
-        return lhs.stat == rhs.stat &&
-        lhs.statType == rhs.statType
-    }
-}
-
 
 class Statistiques: Identifiable, ObservableObject, Equatable {
     
@@ -44,6 +33,10 @@ class Statistiques: Identifiable, ObservableObject, Equatable {
             self.image = UIImage(named: "hourglass_half")!
             self.iconColor = Color(.blue)
             self.iconBackgroundColor = Color(red: 191.0/255.0, green: 228.0/255.0, blue: 249.0/255.0)
+        case MagicStrings.stat_travel:
+            self.image = UIImage(named: "car")!
+            self.iconColor = Color(.purple)
+            self.iconBackgroundColor = Color(red: 197.0/255.0, green: 156.0/255.0, blue: 200.0/255.0)
         default:
             self.image = UIImage(named: "hourglass_half")!
             self.iconColor = Color(.blue)
