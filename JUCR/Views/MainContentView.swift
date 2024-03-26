@@ -13,9 +13,6 @@ struct MainContentView: View {
     @State private var isViewModelLoaded = false
     @State private var isSecondViewExpanded = false
     
-    static let gradientStart = Color(red: 232.0/255.0, green: 67.0/255.0, blue: 96.0/255.0)
-    static let gradientEnd = Color(red: 235.0 / 255, green: 250.0 / 255, blue: 188.0 / 255)
-    
     var body: some View {
         if !isViewModelLoaded {
             ProgressView() // Show a loading indicator while fetching the view model
@@ -29,19 +26,20 @@ struct MainContentView: View {
                             .frame(height: (geometry.size.height * 0.4))
                             .padding(.bottom, 10) // Add padding between views if necessary
                         InformationsView(statistiques: viewModel!.statistiquesList, superCharges: viewModel!.nearbyChargesList)
-                            .frame(height: geometry.size.height * 0.6)
+                            .frame(maxHeight: geometry.size.height * 0.6)
                             .padding(.bottom, geometry.safeAreaInsets.bottom)
                     } else {
                         CarStateSmallerView(viewModel: viewModel!.car)
                             .frame(height: (geometry.size.height * 0.2))
                         InformationsView(statistiques: viewModel!.statistiquesList, superCharges: viewModel!.nearbyChargesList)
-                            .frame(height: geometry.size.height * 0.8)
+                            .frame(maxHeight: geometry.size.height * 0.8)
                             .padding(.bottom, geometry.safeAreaInsets.bottom)
+                            
                     }
                 }
             }
+            .ignoresSafeArea(.all, edges: .bottom)
             .background(Color(red: 232.0/255.0, green: 67.0/255.0, blue: 96.0/255.0))
-           
             .gesture(DragGesture()
                 .onChanged { gesture in
                     let translation = gesture.translation.height

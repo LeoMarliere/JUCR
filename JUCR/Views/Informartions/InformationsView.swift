@@ -113,8 +113,16 @@ struct InformationViewShape: View {
                 path.addLine(to: CGPoint(x: 0, y: tl))
                 path.addArc(center: CGPoint(x: tl, y: tl), radius: tl, startAngle: Angle(degrees: 180), endAngle: Angle(degrees: 270), clockwise: false)
                 
+                let middleX = w / 2
+                let curveDeep = h * 0.08
+                let curveEndpoint = CGPoint(x: middleX, y: curveDeep)
+                let curveStart = CGPoint(x: middleX - (w * 0.2), y: 0)
+                let curveEnd = CGPoint(x: middleX + (w * 0.2), y: 0)
                 
-                
+                path.move(to: curveStart)
+                path.addLine(to: curveEndpoint)
+                path.addLine(to: curveEnd)
+
                 path.closeSubpath()
             }
             .fill(Color.white)

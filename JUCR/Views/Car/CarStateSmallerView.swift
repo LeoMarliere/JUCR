@@ -13,7 +13,6 @@ struct CarStateSmallerView: View {
     
     var body: some View {
         HStack(spacing: 50) {
-            
             VStack(alignment:.leading) {
                 Text(viewModel.model)
                     .font(.system(size: 18, weight: .bold))
@@ -38,7 +37,6 @@ struct CarStateSmallerView: View {
                 .frame(maxWidth: UIScreen.main.bounds.width * 0.4)
                 .padding(.trailing, 10)
         }
-        
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 232.0/255.0, green: 67.0/255.0, blue: 96.0/255.0))
     }
