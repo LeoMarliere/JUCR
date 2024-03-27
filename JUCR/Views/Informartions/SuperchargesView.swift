@@ -27,7 +27,7 @@ struct SuperchargesView: View {
             Spacer()
             
             VStack {
-                Image(uiImage: UIImage(named: "location")!)
+                Image(uiImage: UIImage(named: MagicStrings.icon_location)!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20, height: 20)
@@ -44,22 +44,3 @@ struct SuperchargesView: View {
     }
 }
 
-struct SuperchargesList: View {
-    
-    @ObservedObject var viewModel: SuperchargesViewModel
-    
-    var body: some View {
-        VStack {
-            Text(MagicStrings.title_charges)
-                .font(.headline)
-                .padding(.horizontal)
-            ScrollView(.vertical) {
-                HStack {
-                    ForEach(viewModel.charges) { charge in
-                        SuperchargesView(charge: charge)
-                    }
-                }
-            }
-        }
-    }
-}

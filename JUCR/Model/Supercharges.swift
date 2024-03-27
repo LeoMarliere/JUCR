@@ -25,16 +25,3 @@ class Supercharges: Identifiable, ObservableObject, Equatable {
         lhs.distance == rhs.distance
     }
 }
-
-class SuperchargesViewModel: Identifiable, ObservableObject, Equatable {
-    
-    var charges: [Supercharges]
-    
-    init(charges: [Supercharges]) {
-        self.charges = charges
-    }
-    
-    static func == (lhs: SuperchargesViewModel, rhs: SuperchargesViewModel) -> Bool {
-        return lhs.charges == rhs.charges
-    }
-}

@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 class Statistiques: Identifiable, ObservableObject, Equatable {
     
     var image: UIImage
@@ -48,16 +47,5 @@ class Statistiques: Identifiable, ObservableObject, Equatable {
         return lhs.image == rhs.image &&
         lhs.stat == rhs.stat &&
         lhs.statType == rhs.statType
-    }
-}
-
-class StatistiqueListViewModel: Identifiable, ObservableObject, Equatable {
-    
-    var stats: [Statistiques]
-    
-    init(stats: [Statistiques]) { self.stats = stats}
-    
-    static func == (lhs: StatistiqueListViewModel, rhs: StatistiqueListViewModel) -> Bool {
-        return lhs.stats == rhs.stats
     }
 }

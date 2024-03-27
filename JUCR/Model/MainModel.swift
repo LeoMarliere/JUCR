@@ -9,9 +9,9 @@ import SwiftUI
 
 class MainModel: Identifiable, ObservableObject, Equatable {
     
-    @Published var car: Car
-    @Published var statistiquesList: [Statistiques]
-    @Published var nearbyChargesList: [Supercharges]
+    var car: Car
+    var statistiquesList: [Statistiques]
+    var nearbyChargesList: [Supercharges]
     
     init(car: Car, statistiquesList: [Statistiques], nearbyChargesList: [Supercharges]) {
         self.car = car
@@ -25,3 +25,4 @@ class MainModel: Identifiable, ObservableObject, Equatable {
         lhs.nearbyChargesList == rhs.nearbyChargesList
     }
 }
+

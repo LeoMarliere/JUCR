@@ -13,7 +13,7 @@ struct CarStateSmallerView: View {
     
     var body: some View {
         VStack {
-            HStack() {
+            HStack(spacing: 30) {
                 VStack(alignment:.leading) {
                     Text(viewModel.model)
                         .font(.system(size: MagicNumbers.fontSize_title, weight: .bold))
@@ -36,7 +36,6 @@ struct CarStateSmallerView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: UIScreen.main.bounds.width * 0.4)
-                    .padding(.trailing, 10)
             }
             .padding(.bottom, 20)
             
@@ -46,6 +45,7 @@ struct CarStateSmallerView: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.top, -30)
         .background(MagicNumbers.customColor_mainBackground)
     }
 }

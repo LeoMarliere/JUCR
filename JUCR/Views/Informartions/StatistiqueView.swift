@@ -27,7 +27,7 @@ struct StatistiqueView: View {
                     .frame(width: 20, height: 20)
                     .clipShape(Circle())
             }
-
+            
             Text(statistique.stat)
                 .font(.system(size: MagicNumbers.fontSize_subtitle, weight: .bold))
                 .foregroundColor(.black)

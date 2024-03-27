@@ -37,6 +37,7 @@ class MagicStrings {
     // SF Icon name
     static let icon_downArrow = "chevron.down"
     static let icon_bolt = "bolt.fill"
+    static let icon_location = "location"
     
 
 }

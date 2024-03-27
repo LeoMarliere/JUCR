@@ -14,7 +14,7 @@ struct JUCRApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainContentView()
+            MainView()
         }
     }
     

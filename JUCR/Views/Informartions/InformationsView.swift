@@ -38,8 +38,8 @@ struct InformationsView: View {
             .padding(.bottom, 10)
             .padding(.top, 20)
             
-            ScrollView(.horizontal, showsIndicators: false) { // Changed to .horizontal
-                HStack(spacing: 20) { // Added HStack to display views horizontally
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
                     ForEach(statistiques) { statistique in
                         StatistiqueView(statistique: statistique)
                     }
@@ -96,8 +96,7 @@ struct InformationViewShape: View {
                 
                 let w = geometry.size.width
                 let h = geometry.size.height
-
-                // Make sure we do not exceed the size of the rectangle
+                
                 let tr = min(min(self.tr, h/2), w/2)
                 let tl = min(min(self.tl, h/2), w/2)
                 let bl = min(min(self.bl, h/2), w/2)
@@ -122,7 +121,7 @@ struct InformationViewShape: View {
                 path.move(to: curveStart)
                 path.addLine(to: curveEndpoint)
                 path.addLine(to: curveEnd)
-
+                
                 path.closeSubpath()
             }
             .fill(Color.white)
